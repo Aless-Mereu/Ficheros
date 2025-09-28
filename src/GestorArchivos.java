@@ -1,13 +1,11 @@
 import javax.swing.*;
 import java.io.File;
 
-public class Archivos {
+public class GestorArchivos {
+
 
     public static void crearArchivo() {
-        JOptionPane NombreArchivo = new JOptionPane();
-        File archivo;
-
-        archivo = new File(NombreArchivo.showInputDialog
+        File archivo = new File(JOptionPane.showInputDialog
                 (null, "Dime el nombre del archivo que vas a crear"));
         try {
             if (archivo.createNewFile()) {
@@ -23,9 +21,7 @@ public class Archivos {
     }
 
     public static void crearDirectorio() {
-        JOptionPane NombreDirectorio = new JOptionPane();
-        File directorio;
-        directorio = new File(NombreDirectorio.showInputDialog(null,
+        File directorio = new File(JOptionPane.showInputDialog(null,
                 "Dime el nombre del directorio"));
 
         if (directorio.mkdir()) {
@@ -36,9 +32,7 @@ public class Archivos {
     }
 
     public static void existenciaArchivo() {
-        JOptionPane NombreArchivo = new JOptionPane();
-        File archivo;
-        archivo = new File(NombreArchivo.showInputDialog(null,
+        File archivo = new File(JOptionPane.showInputDialog(null,
                 "Dime el nombre del archivo a buscar"));
         if (archivo.exists()) {
             System.out.println("El archivo existe: ".concat(archivo.getName()));
@@ -52,9 +46,8 @@ public class Archivos {
     }
 
     public static void infoArchivos() {
-        JOptionPane NombreArchivo = new JOptionPane();
-        File archivo;
-        archivo = new File(JOptionPane.showInputDialog(null,
+//        File archivo;
+        File archivo = new File(JOptionPane.showInputDialog(null,
                 "Dime el nombre del archivo"));
         if (archivo.exists()) {
             System.out.println("El archivo existe: ".concat(archivo.getName()));
@@ -69,9 +62,7 @@ public class Archivos {
     }
 
     public static void listarDirectorios() {
-        JOptionPane NombreDirectorio = new JOptionPane();
-        File directorio;
-        directorio = new File(JOptionPane.showInputDialog(null,
+        File directorio = new File(JOptionPane.showInputDialog(null,
                 "Escribe la ruta del directorio"));
         if (directorio.isDirectory()) {
             String[] contenido = directorio.list();
@@ -90,9 +81,7 @@ public class Archivos {
     }
 
     public static void eliminarArchivos() {
-        JOptionPane NombreArchivo = new JOptionPane();
-        File archivo;
-        archivo = new File(JOptionPane.showInputDialog(null,
+        File archivo = new File(JOptionPane.showInputDialog(null,
                 "Dime el nombre del archivo a eliminar (con extension): "));
         if (archivo.delete()) {
             System.out.println("El archivo eliminado: ".concat(archivo.getName()));
@@ -104,9 +93,7 @@ public class Archivos {
     }
 
     public static void eliminarDirectorioVacio() {
-        JOptionPane NombreDirectorio = new JOptionPane();
-        File directorio;
-        directorio = new File(JOptionPane.showInputDialog(null,
+       File  directorio = new File(JOptionPane.showInputDialog(null,
                 "Dime el nombre del directorio vacio"));
         if (directorio.delete()) {
             System.out.println("El archivo eliminado: ".concat(directorio.getName()));
