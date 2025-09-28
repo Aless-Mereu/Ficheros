@@ -32,7 +32,7 @@ public class Entrada {
                         "Opcion no permitida, por favor ingrese una valida");
 
             }
-        } while (option != 0);
+        } while (true);
 
 
     }
